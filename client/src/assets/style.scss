@@ -1,0 +1,191 @@
+$color: #3978fa;
+
+@font-face {
+  font-family: "Jost";
+  src: url("./fonts/jost-400.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("./fonts/jost-500.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("./fonts/jost-600.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("./fonts/jost-700.ttf");
+  font-weight: 700;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  font-size: 16px;
+  color: #242424;
+  font-family: 'Jost';
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.header-bar {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+}
+.nav-links {
+  display: flex;
+
+  li {
+    display: block;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+  }
+  a {
+    color: #242424;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: .8em;
+    position: relative;
+    transition: .3s;
+    &:hover {
+      color: $color;
+    }
+  }
+  a.active {
+    color: $color;
+  }
+}
+.title-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+}
+.title-container {
+  position: relative;
+}
+h1 {
+  text-transform: uppercase;
+  font-size: 5em;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.sign-img {
+  position: absolute;
+  height: 19px;
+  right: -2px;
+  bottom: -2px;
+}
+
+@keyframes title {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.glossary-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.glossary {
+  width: 100%;
+  max-width: 1900px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+.glossary-item {
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  padding: 15px;
+}
+.glossary-item__name {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.glossary-item__value {
+  font-size: .8em;
+  color: #333;
+}
+#myDiagramDiv {
+
+  canvas {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 1299.98px)  {
+  .glossary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 767.98px)  {
+  .glossary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 3em;
+    &:before {
+      height: 12px;
+      bottom: -2px;
+    }
+  }
+  .title-wrapper {
+    margin-bottom: 60px;
+  }
+  .sign-img {
+    height: 14px;
+    bottom: -4px;
+  }
+}
+@media screen and (max-width: 500.98px)  {
+  .glossary {
+    grid-template-columns: 1fr;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}

@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:1.23
+    ports:
+      - 80:80
+    volumes:
+      - './api:/var/www/node'
+      - './client/dist:/var/www/vue'
+      - './nginx:/etc/nginx/conf.d'
+    networks:
+      - app-network
+    depends_on:
+      - node
+      - vue
+
+  node:
+    build: './api'
+    volumes:
+      - './api:/var/www/node'
+    networks:
+      - app-network
+
+  vue:
+    build: './client'
+    volumes:
+      - './client:/var/www/vue'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
